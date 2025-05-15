@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trendy Femme Accesorios</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #fff8fb; }
+    header, footer { background: #ffd6e8; padding: 1rem; text-align: center; }
+    nav a { margin: 0 1rem; color: #d63384; text-decoration: none; font-weight: bold; }
+    .hero { padding: 2rem; text-align: center; }
+    .catalogo { padding: 2rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .producto { border: 1px solid #eac4d5; border-radius: 10px; padding: 1rem; background: #fff; }
+    .producto img { width: 100%; border-radius: 8px; }
+    .producto h3 { margin: 0.5rem 0; color: #c2185b; }
+    .producto span { display: block; font-weight: bold; color: #555; margin-bottom: 0.5rem; }
+    .btn-comprar { background: #d63384; color: white; border: none; padding: 0.5rem 1rem; border-radius: 5px; cursor: pointer; }
+    .btn-comprar:hover { background: #a81c61; }
+    .whatsapp { position: fixed; bottom: 15px; right: 15px; }
+    .whatsapp img { width: 50px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Trendy Femme Accesorios</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#nosotros">Sobre Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section id="inicio" class="hero">
+    <h2>La elegancia empieza contigo.</h2>
+    <p>Descubre accesorios únicos para realzar tu estilo.</p>
+  </section>
+
+  <section id="catalogo" class="catalogo">
+    <div class="producto">
+      <img src="https://images.unsplash.com/photo-1618354691267-e88e8d0c09ce?auto=format&fit=crop&w=400&q=80" alt="Aretes dorados">
+      <h3>Aretes Dorados</h3>
+      <span>$35.000 COP</span>
+      <button class="btn-comprar">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="https://images.unsplash.com/photo-1622434641408-6ff0aa43bd54?auto=format&fit=crop&w=400&q=80" alt="Collar elegante">
+      <h3>Collar de Perlas</h3>
+      <span>$50.000 COP</span>
+      <button class="btn-comprar">Agregar al carrito</button>
+    </div>
+    <div class="producto">
+      <img src="https://images.unsplash.com/photo-1602524208569-23299a4f14d8?auto=format&fit=crop&w=400&q=80" alt="Pulsera de lujo">
+      <h3>Pulsera Dorada</h3>
+      <span>$28.000 COP</span>
+      <button class="btn-comprar">Agregar al carrito</button>
+    </div>
+  </section>
+
+  <section id="nosotros" style="padding: 2rem;">
+    <h2>Sobre Nosotros</h2>
+    <p>Trendy Femme nace para mujeres que aman la elegancia en los pequeños detalles. Cada pieza es pensada con amor y buen gusto.</p>
+  </section>
+
+  <section id="contacto" style="padding: 2rem;">
+    <h2>Contacto</h2>
+    <p>Escríbenos al WhatsApp o síguenos en redes sociales.</p>
+  </section>
+
+  <a class="whatsapp" href="https://wa.me/573025108630" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <footer>
+    <p>&copy; 2025 Trendy Femme Accesorios</p>
+  </footer>
+</body>
+</html>
