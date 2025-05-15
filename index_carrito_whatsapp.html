@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trendy Femme - Carrito Funcional</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #fff8f5; color: #5c3d2e; margin: 0; padding: 0; }
+    header, section { padding: 2rem; text-align: center; }
+    .producto { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; margin: 1rem; display: inline-block; width: 200px; }
+    .btn { padding: 0.5rem 1rem; background-color: #e7c2b5; border: none; border-radius: 5px; cursor: pointer; }
+    #carrito { position: fixed; bottom: 20px; right: 20px; background: #5c3d2e; color: white; padding: 1rem; border-radius: 10px; display: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Trendy Femme Accesorios</h1>
+  <p>Agrega tus accesorios favoritos</p>
+</header>
+
+<section id="catalogo">
+  <div class="producto">
+    <h3>Aretes Dorados</h3>
+    <p>$30.000 COP</p>
+    <button class="btn" onclick="agregarAlCarrito('Aretes Dorados', 30000)">Agregar al carrito</button>
+  </div>
+  <div class="producto">
+    <h3>Anillo Dorado</h3>
+    <p>$25.000 COP</p>
+    <button class="btn" onclick="agregarAlCarrito('Anillo Dorado', 25000)">Agregar al carrito</button>
+  </div>
+</section>
+
+<div id="carrito">
+  <p id="resumen"></p>
+  <button class="btn" onclick="enviarWhatsApp()">Finalizar compra</button>
+</div>
+
+<script>
+  let carrito = [];
+  function agregarAlCarrito(nombre, precio) {
+    carrito.push({ nombre, precio });
+    actualizarCarrito();
+  }
+
+  function actualizarCarrito() {
+    const resumen = document.getElementById("resumen");
+    let texto = "";
+    let total = 0;
+    carrito.forEach(p => {
+      texto += `- ${p.nombre}: $${p.precio.toLocaleString()}\n`;
+      total += p.precio;
+    });
+    texto += `\nTotal: $${total.toLocaleString()} COP`;
+    resumen.textContent = texto;
+    document.getElementById("carrito").style.display = "block";
+  }
+
+  function enviarWhatsApp() {
+    let mensaje = "Hola! Quiero comprar:\n";
+    let total = 0;
+    carrito.forEach(p => {
+      mensaje += `- ${p.nombre}: $${p.precio.toLocaleString()}\n`;
+      total += p.precio;
+    });
+    mensaje += `\nTotal: $${total.toLocaleString()} COP`;
+    let url = `https://wa.me/573025108630?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
+  }
+</script>
+
+</body>
+</html>
