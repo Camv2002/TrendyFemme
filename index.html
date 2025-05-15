@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Trendy Femme Accesorios</title>
   <style>
     body {
@@ -45,20 +44,126 @@
       border: none;
       border-radius: 2rem;
       cursor: pointer;
-      transition: background 0.3s ease;
       text-decoration: none;
       color: #5c3d2e;
     }
-    .btn-comprar:hover {
-      background-color: #f3d9ce;
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      color: #5c3d2e;
+      margin-bottom: 2rem;
+    }
+    .categoria {
+      margin-bottom: 3rem;
+    }
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .producto {
+      background-color: #fdf3ef;
+      padding: 1rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .producto img {
+      max-width: 100%;
+      border-radius: 0.5rem;
+    }
+    .producto h3 {
+      margin: 0.5rem 0 0.2rem;
+      font-size: 1.1rem;
+    }
+    .producto p {
+      margin: 0;
+      font-weight: bold;
+      color: #bb7e68;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Trendy Femme Accesorios</h1>
     <p>La elegancia empieza contigo</p>
     <a href="#catalogo" class="btn-comprar">Ver Catálogo</a>
   </header>
+
+  <section id="catalogo">
+    <h2>Catálogo de Accesorios</h2>
+
+    <div class="categoria">
+      <h3>Aretes</h3>
+      <div class="productos">
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1600185365551-26d7a2726a95?auto=format&fit=crop&w=400&q=80" alt="Aretes dorados">
+          <h3>Aretes Dorados</h3>
+          <p>$30.000 COP</p>
+        </div>
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1622435221187-bf4c6d1d73ce?auto=format&fit=crop&w=400&q=80" alt="Aretes de perlas">
+          <h3>Aretes de Perlas</h3>
+          <p>$38.000 COP</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>Anillos</h3>
+      <div class="productos">
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1588117305383-98cddba6aeae?auto=format&fit=crop&w=400&q=80" alt="Anillo dorado">
+          <h3>Anillo Dorado</h3>
+          <p>$25.000 COP</p>
+        </div>
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1582735686549-6d9aefb2e6c3?auto=format&fit=crop&w=400&q=80" alt="Anillo doble">
+          <h3>Anillo Doble</h3>
+          <p>$28.000 COP</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>Cadenas</h3>
+      <div class="productos">
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1618354691267-e88e8d0c09ce?auto=format&fit=crop&w=400&q=80" alt="Cadena Fina">
+          <h3>Cadena Fina</h3>
+          <p>$45.000 COP</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>Candongas</h3>
+      <div class="productos">
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1609335009969-d4d43983263f?auto=format&fit=crop&w=400&q=80" alt="Candongas pequeñas">
+          <h3>Candongas Pequeñas</h3>
+          <p>$35.000 COP</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>Set</h3>
+      <div class="productos">
+        <div class="producto">
+          <img src="https://images.unsplash.com/photo-1602777926337-082cfb275cfc?auto=format&fit=crop&w=400&q=80" alt="Set collar y aretes">
+          <h3>Set Collar + Aretes</h3>
+          <p>$60.000 COP</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
 </html>
