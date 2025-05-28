@@ -1,0 +1,37 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 2em;
+    color: #222;
+}
+
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.categoria img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+.categoria h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #000;
+}
