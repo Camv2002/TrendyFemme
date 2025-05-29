@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trendy Femme</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-50 font-sans text-gray-800">
+
+  <!-- Banner -->
+  <div class="bg-pink-500 text-white text-center py-2 animate-pulse">
+    🛵 Envíos GRATIS por compras superiores a 34.900 COP
+  </div>
+
+  <!-- Catálogo dinámico por categorías -->
+  <section id="catalogo" class="py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center text-pink-800 mb-10">Catálogo</h2>
+      <div id="categorias" class="space-y-16"></div>
+    </div>
+  </section>
+
+  <script>
+  const categorias = [
+    "Anillos", "Aretes", "Cadenas", "Dijes", "Earcuff",
+    "Pulseras", "Sets", "Sharms", "Tobilleras", "Topos"
+  ];
+
+  const productos = {
+    "Anillos": [
+      { nombre: "Anillo elegante", precio: 18000, imagen: "anillo1.jpg" },
+      { nombre: "Anillo corazón", precio: 22000, imagen: "anillo2.jpg" }
+    ],
+    "Aretes": [
+      { nombre: "Aretes perla dorada", precio: 15000, imagen: "aretes1.jpg" }
+    ],
+    "Cadenas": [], "Dijes": [], "Earcuff": [],
+    "Pulseras": [], "Sets": [], "Sharms": [],
+    "Tobilleras": [], "Topos": []
+  };
+
+  const contenedor = document.getElementById("categorias");
+  categorias.forEach(cat => {
+    const seccion = document.createElement("div");
+    seccion.innerHTML = `
+      <h3 class="text-2xl font-bold text-pink-700 mb-6">${cat}</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        ${productos[cat].map(p => `
+          <div class="bg-white p-4 rounded-2xl shadow hover:shadow-lg transition">
+            <img src="public/productos/${cat.toLowerCase()}/${p.imagen}" alt="${p.nombre}" class="w-full h-48 object-cover rounded-xl mb-2">
+            <h4 class="font-semibold">${p.nombre}</h4>
+            <p class="text-pink-600 font-bold">$${p.precio.toLocaleString()} COP</p>
+            <button class="mt-2 bg-pink-600 hover:bg-pink-700 text-white px-3 py-1 rounded-full text-sm">Agregar al carrito</button>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    contenedor.appendChild(seccion);
+  });
+  </script>
+
+</body>
+</html>
