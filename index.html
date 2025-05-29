@@ -1,138 +1,111 @@
-
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Trendy Femme</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Trendy Femme Accesorios</title>
   <style>
-    .catalogo {
-      padding: 50px 20px;
-      background-color: #fff0f5;
-      text-align: center;
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #333; scroll-behavior: smooth; }
+    header { background: #fff3f8; padding: 1rem; text-align: center; position: sticky; top: 0; z-index: 10; }
+    .banner { background-color: #ff9ac6; color: white; padding: 0.5rem; font-weight: bold; animation: pulse 2s infinite; }
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
     }
-    .catalogo h2 {
-      font-size: 2em;
-      color: #d63384;
-      margin-bottom: 30px;
-    }
-    .catalogo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-    .catalogo-item {
-      border: 2px solid #ffd6e8;
-      border-radius: 20px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-      background-color: #fff;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      width: 180px;
-    }
-    .catalogo-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    .catalogo-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .catalogo-item p {
-      padding: 10px;
-      margin: 0;
-      font-weight: bold;
-      color: #d63384;
-      background-color: #fff;
-    }
-    .social-icon {
-      width: 32px;
-      height: 32px;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-    .social-icon:hover {
-      transform: scale(1.1);
-      filter: brightness(1.2);
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 100;
-    }
-    .logo-container img {
-      height: 90px;
-      max-width: 100%;
-      object-fit: contain;
-      margin: 0 auto;
-      display: block;
-      padding: 20px 0;
-      filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.05));
-    }
+    nav { display: flex; justify-content: center; gap: 1rem; padding: 1rem 0; }
+    nav a { text-decoration: none; color: #d63384; font-weight: bold; transition: color 0.3s; }
+    nav a:hover { color: #a61e4d; }
+    section { padding: 2rem 1rem; max-width: 1200px; margin: auto; }
+    .catalogo img { width: 100%; max-width: 300px; border-radius: 10px; }
+    .catalogo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+    .producto { text-align: center; border: 1px solid #ddd; padding: 1rem; border-radius: 12px; position: relative; transition: transform 0.3s ease; }
+    .producto:hover { transform: scale(1.03); }
+    .favorito { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 1.2rem; color: gray; }
+    .favorito.marcado { color: red; }
+    .testimonios { display: grid; gap: 1rem; }
+    .testimonio { background: #fff0f5; padding: 1rem; border-radius: 10px; font-style: italic; }
+    footer { background: #f8f9fa; padding: 2rem 1rem; text-align: center; }
+    .social-icons a { margin: 0 0.5rem; color: #6c757d; font-size: 1.5rem; transition: color 0.3s; }
+    .social-icons a:hover { color: #d63384; }
+    .info-links a { display: block; margin: 0.2rem 0; text-decoration: none; color: #495057; }
+    .info-links a:hover { text-decoration: underline; }
+    .buscador { margin-bottom: 1rem; text-align: center; }
+    .buscador input { padding: 0.5rem; width: 60%; max-width: 300px; border: 1px solid #ccc; border-radius: 5px; }
   </style>
 </head>
-<body class="bg-pink-50 font-sans text-gray-800">
-
-  <!-- Logo -->
-  <div class="logo-container">
-    <img src="imagenes/logo-trendy-femme.jpg" alt="Trendy Femme Logo">
-  </div>
-
-  <!-- Banner -->
-  <div class="bg-pink-500 text-white text-center py-2 animate-pulse">
-    🛵 Envíos GRATIS por compras superiores a 34.900 COP
-  </div>
-
-  <!-- Catálogo -->
-  <section id="catalogo" class="catalogo">
+<body>
+  <div class="banner">🛵 Envíos GRATIS por compras superiores a 34.900 COP</div>
+  <header>
+    <h1>Trendy Femme Accesorios</h1>
+    <p>La elegancia empieza contigo.</p>
+    <nav>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#sobre">Sobre Nosotros</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>  <section id="catalogo">
     <h2>Catálogo</h2>
-    <div class="catalogo-grid">
-      <div class="catalogo-item"><img src="imagenes/aretes.jpg" alt="Aretes"><p>Aretes</p></div>
-      <div class="catalogo-item"><img src="imagenes/anillos.jpg" alt="Anillos"><p>Anillos</p></div>
-      <div class="catalogo-item"><img src="imagenes/cadenas.jpg" alt="Cadenas"><p>Cadenas</p></div>
-      <div class="catalogo-item"><img src="imagenes/dijes.jpg" alt="Dijes"><p>Dijes</p></div>
-      <div class="catalogo-item"><img src="imagenes/earcuff.jpg" alt="Earcuff"><p>Earcuff</p></div>
-      <div class="catalogo-item"><img src="imagenes/pulseras.jpg" alt="Pulseras"><p>Pulseras</p></div>
-      <div class="catalogo-item"><img src="imagenes/sets.jpg" alt="Sets"><p>Set Collar & Aretes</p></div>
-      <div class="catalogo-item"><img src="imagenes/sharms.jpg" alt="Sharms"><p>Sharms</p></div>
-      <div class="catalogo-item"><img src="imagenes/tobilleras.jpg" alt="Tobilleras"><p>Tobilleras</p></div>
-      <div class="catalogo-item"><img src="imagenes/topos.jpg" alt="Topos"><p>Topos</p></div>
+    <div class="buscador">
+      <input type="text" id="busqueda" placeholder="Buscar producto..." onkeyup="buscarProducto()">
     </div>
-  </section>
-
-  <!-- Secciones informativas -->
-  <section class="p-6 bg-white">
-    <h3 class="text-xl font-bold text-pink-700 mb-4">¿CÓMO COMPRAR?</h3>
-    <p>Para comprar en Trendy Femme, simplemente navega por nuestro catálogo, elige tus productos favoritos y agrégalos al carrito. Luego dirígete a pagar o contáctanos por WhatsApp para finalizar tu compra.</p>
-
-    <h3 class="text-xl font-bold text-pink-700 mt-6 mb-4">ENVÍOS</h3>
-    <p>Realizamos envíos a todo el país. <strong>Envíos GRATIS solo en la ciudad de Cali</strong> por compras mayores a $34.900 COP. Los demás envíos se calculan según tu ubicación.</p>
-
-    <h3 class="text-xl font-bold text-pink-700 mt-6 mb-4">GARANTÍAS</h3>
-    <p>Todos nuestros productos cuentan con garantía por defectos de fabricación. No cubrimos daños por mal uso o contacto con agua o productos químicos.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-pink-100 text-center p-6">
-    <div class="mb-4">
-      <h4 class="font-semibold mb-2">Contáctanos</h4>
-      <div class="flex justify-center gap-4">
-        <a href="https://www.instagram.com/accesorios_trendyfemme?igsh=bW9jcTN6eTV0Ymdw" target="_blank"><img src="iconos/instagram.png" alt="Instagram" class="social-icon"></a>
-        <a href="https://www.facebook.com/share/16bcXm9fdd/" target="_blank"><img src="iconos/facebook.png" alt="Facebook" class="social-icon"></a>
-        <a href="https://www.tiktok.com/@trendy.femme0?_t=ZS-8wlS3NyjfXx&_r=1" target="_blank"><img src="iconos/tiktok.png" alt="TikTok" class="social-icon"></a>
-        <a href="mailto:trendyfemmeaccesorios@gmail.com"><img src="iconos/gmail.png" alt="Gmail" class="social-icon"></a>
-        <a href="https://wa.me/573005548453" target="_blank"><img src="iconos/whatsapp.png" alt="WhatsApp" class="social-icon"></a>
-      </div>
+    <div class="catalogo-grid" id="lista-productos">
+      <div class="producto"><div class="favorito" onclick="toggleFavorito(this)">♡</div><img src="https://via.placeholder.com/200" alt="Aretes"><p>Aretes Dorados</p></div>
+      <div class="producto"><div class="favorito" onclick="toggleFavorito(this)">♡</div><img src="https://via.placeholder.com/200" alt="Collar"><p>Collar Plateado</p></div>
+      <div class="producto"><div class="favorito" onclick="toggleFavorito(this)">♡</div><img src="https://via.placeholder.com/200" alt="Anillo"><p>Anillo Elegante</p></div>
+      <!-- Agrega más productos aquí -->
     </div>
-    <p class="text-sm text-gray-600 mt-4">Trendy Femme © 2025</p>
-  </footer>
+  </section>  <section id="sobre">
+    <h2>Sobre Nosotros</h2>
+    <p>Trendy Femme nace para realzar tu belleza con accesorios únicos, elegantes y accesibles. Nos apasiona ofrecer piezas que te hagan sentir especial cada día.</p>
+  </section>  <section id="testimonios">
+    <h2>Testimonios</h2>
+    <div class="testimonios">
+      <div class="testimonio">“La calidad es excelente. No se dañan ni se oxidan. ¡Me encantaron!”</div>
+      <div class="testimonio">“Muy buen precio y super rápido el envío. ¡Gracias!”</div>
+      <div class="testimonio">“La atención fue espectacular. Me ayudaron a elegir justo lo que buscaba.”</div>
+    </div>
+  </section>  <footer id="contacto">
+    <h3>Contáctanos</h3>
+    <div class="social-icons">
+      <a href="https://instagram.com" target="_blank">📸</a>
+      <a href="https://tiktok.com" target="_blank">🎵</a>
+      <a href="https://facebook.com" target="_blank">📘</a>
+      <a href="mailto:trendyfemme@gmail.com">📧</a>
+      <a href="https://wa.me/573001112233" target="_blank">📱</a>
+    </div>
+    <div class="info-links">
+      <h4>Información</h4>
+      <a href="#como-comprar">¿Cómo comprar?</a>
+      <a href="#envios">Envíos</a>
+      <a href="#garantias">Garantías</a>
+    </div><section id="como-comprar">
+  <h4>¿Cómo comprar?</h4>
+  <p>Agrega productos al carrito y finaliza tu compra por WhatsApp o el formulario. ¡Es fácil y rápido!</p>
+</section>
+<section id="envios">
+  <h4>Envíos</h4>
+  <p>Hacemos envíos a toda Colombia. Gratis por compras superiores a $34.900 COP.</p>
+</section>
+<section id="garantias">
+  <h4>Garantías</h4>
+  <p>Si tu producto llega defectuoso, lo cambiamos sin costo en los primeros 5 días.</p>
+</section>
 
-  <!-- WhatsApp flotante -->
-  <a href="https://wa.me/573005548453" target="_blank" class="whatsapp-float">
-    <img src="iconos/whatsapp.png" alt="WhatsApp" class="w-12 h-12">
-  </a>
-</body>
+  </footer>  <script>
+    function toggleFavorito(el) {
+      el.classList.toggle('marcado');
+      el.textContent = el.classList.contains('marcado') ? '❤️' : '♡';
+    }
+
+    function buscarProducto() {
+      const input = document.getElementById('busqueda').value.toLowerCase();
+      const productos = document.querySelectorAll('.producto');
+      productos.forEach(prod => {
+        const texto = prod.innerText.toLowerCase();
+        prod.style.display = texto.includes(input) ? '' : 'none';
+      });
+    }
+  </script></body>
 </html>
