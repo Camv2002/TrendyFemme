@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trendy Femme</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .catalogo {
+      padding: 50px 20px;
+      background-color: #fff0f5;
+      text-align: center;
+    }
+
+    .catalogo h2 {
+      font-size: 2em;
+      color: #d63384;
+      margin-bottom: 30px;
+    }
+
+    .catalogo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+
+    .catalogo-item {
+      border: 2px solid #ffd6e8;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      width: 180px;
+    }
+
+    .catalogo-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .catalogo-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .catalogo-item p {
+      padding: 10px;
+      margin: 0;
+      font-weight: bold;
+      color: #d63384;
+      background-color: #fff;
+    }
+
+    footer a {
+      color: #d63384;
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: #a61e4d;
+    }
+  </style>
+</head>
+<body class="bg-pink-50 font-sans text-gray-800">
+
+  <!-- Banner -->
+  <div class="bg-pink-500 text-white text-center py-2 animate-pulse">
+    🛵 Envíos GRATIS por compras superiores a 34.900 COP
+  </div>
+
+  <!-- Catálogo dinámico -->
+  <section id="catalogo" class="catalogo">
+    <h2>Catálogo</h2>
+    <div class="catalogo-grid">
+      <div class="catalogo-item"><img src="imagenes/aretes.jpg" alt="Aretes"><p>Aretes</p></div>
+      <div class="catalogo-item"><img src="imagenes/anillos.jpg" alt="Anillos"><p>Anillos</p></div>
+      <div class="catalogo-item"><img src="imagenes/cadenas.jpg" alt="Cadenas"><p>Cadenas</p></div>
+      <div class="catalogo-item"><img src="imagenes/dijes.jpg" alt="Dijes"><p>Dijes</p></div>
+      <div class="catalogo-item"><img src="imagenes/earcuff.jpg" alt="Earcuff"><p>Earcuff</p></div>
+      <div class="catalogo-item"><img src="imagenes/pulseras.jpg" alt="Pulseras"><p>Pulseras</p></div>
+      <div class="catalogo-item"><img src="imagenes/sets.jpg" alt="Sets"><p>Set Collar & Aretes</p></div>
+      <div class="catalogo-item"><img src="imagenes/sharms.jpg" alt="Sharms"><p>Sharms</p></div>
+      <div class="catalogo-item"><img src="imagenes/tobilleras.jpg" alt="Tobilleras"><p>Tobilleras</p></div>
+      <div class="catalogo-item"><img src="imagenes/topos.jpg" alt="Topos"><p>Topos</p></div>
+    </div>
+  </section>
+
+  <!-- Información y contacto -->
+  <footer class="bg-white text-center text-sm text-gray-700 py-10 mt-10 border-t border-pink-200">
+    <div class="mb-6">
+      <h3 class="font-bold text-lg text-pink-600">Contacto</h3>
+      <div class="flex justify-center gap-4 mt-2">
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://tiktok.com" target="_blank">TikTok</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="mailto:trendyfemme@gmail.com" target="_blank">Gmail</a>
+        <a href="https://wa.me/573025108630?text=Hola%20quiero%20comprar%20accesorios%20en%20Trendy%20Femme" target="_blank">WhatsApp</a>
+      </div>
+    </div>
+    <div class="mb-6">
+      <h3 class="font-bold text-lg text-pink-600">Información</h3>
+      <p><a href="#como-comprar">¿CÓMO COMPRAR?</a> | <a href="#envios">ENVÍOS</a> | <a href="#garantias">GARANTÍAS</a></p>
+    </div>
+    <div class="mb-6">
+      <h3 class="font-bold text-lg text-pink-600">Métodos de pago</h3>
+      <p>Nequi, Daviplata, Transferencia Bancaria</p>
+    </div>
+  </footer>
+
+  <!-- Preguntas frecuentes -->
+  <section id="como-comprar" class="p-6 text-center bg-pink-100 text-gray-800">
+    <h3 class="text-xl font-bold mb-2 text-pink-700">¿Cómo comprar?</h3>
+    <p>Selecciona tus productos favoritos, agrégalos al carrito y finaliza tu pedido por WhatsApp. ¡Es rápido y fácil!</p>
+  </section>
+  <section id="envios" class="p-6 text-center bg-pink-100 text-gray-800">
+    <h3 class="text-xl font-bold mb-2 text-pink-700">Envíos</h3>
+    <p>Hacemos envíos a todo Colombia. Envío GRATIS en Cali por compras superiores a $34.900 COP.</p>
+  </section>
+  <section id="garantias" class="p-6 text-center bg-pink-100 text-gray-800">
+    <h3 class="text-xl font-bold mb-2 text-pink-700">Garantías</h3>
+    <p>Si tu accesorio presenta un defecto de fábrica, lo cambiamos sin costo dentro de los primeros 5 días hábiles después de recibido.</p>
+  </section>
+
+</body>
+</html>
