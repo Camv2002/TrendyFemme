@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trendy Femme</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;display=swap" rel="stylesheet"/>
+<style>
+    .catalogo {
+      padding: 50px 20px;
+      background-color: #fff0f5;
+      text-align: center;
+    }
+    .catalogo h2 {
+      font-size: 2em;
+      color: #d89aa0;
+      margin-bottom: 30px;
+    }
+    .catalogo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+    .catalogo-item {
+      border: 2px solid #ffd6e8;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      width: 180px;
+    }
+    .catalogo-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .catalogo-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .catalogo-item p {
+      padding: 10px;
+      margin: 0;
+      font-weight: bold;
+      color: #d89aa0;
+      background-color: #fff;
+    }
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+    .social-icon:hover {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+
+/* Fondo uniforme en toda la web */
+body {
+  background-color: #fce6ea;
+}
+
+.encabezado-integrado {
+  background-color: #fce6ea;
+  padding: 50px 20px 30px;
+  text-align: center;
+  border-bottom: 1px solid #e2cfcf;
+}
+
+.contenido-encabezado {
+  max-width: 700px;
+  margin: 0 auto;
+  animation: fadeIn 1.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grupo-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+gap: 0px;
+}
+
+.corona {
+  width: 180px;
+  height: 180px;
+  
+  border-radius: 50%;
+}
+
+.titulo-trendy {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: #d89aa0;
+  margin: -20px 0 0 0;
+  transition: all 0.4s ease;
+}
+
+.titulo-trendy:hover {
+  color: #000;
+  letter-spacing: 1px;
+}
+
+.eslogan-trendy {
+  font-size: 20px;
+  color: #d89aa0;
+  font-style: italic;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.catalogo {
+  background-color: #fce6ea;
+}
+
+.catalogo h2 {
+  font-size: 2em;
+  color: #000;
+  margin-bottom: 30px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .titulo-trendy {
+    font-size: 36px;
+  }
+  .eslogan-trendy {
+    font-size: 16px;
+  }
+  .grupo-logo {
+    flex-direction: column;
+    flex-direction: column;
+gap: 0px;
+  }
+  .corona {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+  </style>
+</head>
+<body class="bg-pink-50 font-sans text-gray-800">
+<!-- Banner -->
+<div class="bg-pink-500 text-white text-center py-2 animate-pulse">
+    🛵 Envíos GRATIS por compras superiores a 34.900 COP
+  </div>
+<section class="bg-white border-b border-gray-200 shadow-sm">
+<div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+<!-- Menú hamburguesa -->
+<button class="text-gray-700 focus:outline-none text-2xl">☰</button>
+<!-- Logo centrado -->
+<div class="text-center">
+<img alt="Trendy Femme Logo" class="h-8 mx-auto" src="imagenes/logo_trendyfemme.png"/>
+</div>
+<!-- Buscador y carrito -->
+<div class="flex items-center gap-4">
+<button class="text-gray-700 text-xl">🔍</button>
+<div class="border border-gray-300 px-2 py-1 text-sm rounded text-gray-700">
+        $0
+        <img alt="Carrito" class="inline w-5 ml-1 align-middle" src="iconos/bolsa.png"/>
+</div>
+</div>
+</div>
+<!-- Banner con imagen y frase -->
+<div class="relative bg-cover bg-center h-[300px] flex items-center justify-center text-center text-white" style="background-image: url('imagenes/empaque_trendy.jpg');">
+<div class="bg-black bg-opacity-40 p-4 rounded">
+<h2 class="text-xl sm:text-2xl md:text-3xl font-light italic">"Aquí va tu frase personalizada..."</h2>
+</div>
+</div>
+</section>
+
+<!-- Catálogo -->
+<!-- Encabezado Integrado -->
+
+<section class="catalogo" id="catalogo">
+<h2>Catálogo</h2>
+<div class="buscador-catalogo" style="margin: 20px auto; text-align: center;">
+<input id="busqueda" onkeyup="filtrarProductos()" placeholder="Buscar producto..." style="padding: 8px; border-radius: 8px; border: 1px solid #d89aa0; width: 250px;" type="text"/>
+</div>
+<div class="catalogo-grid">
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Aretes" src="imagenes/aretes.jpg"/>
+<p>Aretes</p>
+<button onclick="agregarAlCarrito('Aretes')">Agregar al carrito</button>
+</div>
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Anillos" src="imagenes/anillos.jpg"/>
+<p>Anillos</p>
+<button onclick="agregarAlCarrito('Anillos')">Agregar al carrito</button>
+</div>
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Cadenas" src="imagenes/cadenas.jpg"/>
+<p>Cadenas</p>
+<button onclick="agregarAlCarrito('Cadenas')">Agregar al carrito</button>
+</div>
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Dijes" src="imagenes/dijes.jpg"/>
+<p>Dijes</p>
+<button onclick="agregarAlCarrito('Dijes')">Agregar al carrito</button>
+</div>
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Earcuff" src="imagenes/earcuff.jpg"/>
+<p>Earcuff</p>
+<button onclick="agregarAlCarrito('Earcuff')">Agregar al carrito</button>
+</div>
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Pulseras" src="imagenes/pulseras.jpg"/>
+<p>Pulseras</p>
+<button onclick="agregarAlCarrito('Pulseras')">Agregar al carrito</button>
+</div>
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Set Collar &amp; Aretes" src="imagenes/sets.jpg"/>
+<p>Set Collar &amp; Aretes</p>
+<button onclick="agregarAlCarrito('Set Collar &amp; Aretes')">Agregar al carrito</button>
+</div>
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Sharms" src="imagenes/sharms.jpg"/>
+<p>Sharms</p>
+<button onclick="agregarAlCarrito('Sharms')">Agregar al carrito</button>
+</div>
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Tobilleras" src="imagenes/tobilleras.jpg"/>
+<p>Tobilleras</p>
+<button onclick="agregarAlCarrito('Tobilleras')">Agregar al carrito</button>
+</div>
+<div class="catalogo-item">
+<div class="favorito" onclick="toggleFavorito(this)">♡</div>
+<img alt="Topos" src="imagenes/topos.jpg"/>
+<p>Topos</p>
+<button onclick="agregarAlCarrito('Topos')">Agregar al carrito</button>
+</div>
+</div>
+</section>
+<!-- Secciones informativas -->
+<section class="p-6 bg-white">
+<h3 class="text-xl font-bold text-pink-700 mb-4">¿CÓMO COMPRAR?</h3>
+<p>Para comprar en Trendy Femme, simplemente navega por nuestro catálogo, elige tus productos favoritos y agrégalos al carrito. Luego dirígete a pagar o contáctanos por WhatsApp para finalizar tu compra.</p>
+<h3 class="text-xl font-bold text-pink-700 mt-6 mb-4">ENVÍOS</h3>
+<p>Realizamos envíos a todo el país. <strong>Envíos GRATIS solo en la ciudad de Cali</strong> por compras mayores a $34.900 COP. Los demás envíos se calculan según tu ubicación.</p>
+<h3 class="text-xl font-bold text-pink-700 mt-6 mb-4">GARANTÍAS</h3>
+<p>Todos nuestros productos cuentan con garantía por defectos de fabricación. No cubrimos daños por mal uso o contacto con agua o productos químicos.</p>
+</section>
+<!-- Footer -->
+<section class="p-6 bg-pink-50">
+<h2 class="text-xl font-bold text-pink-700 mb-4 text-center">Testimonios</h2>
+<div class="max-w-2xl mx-auto space-y-4">
+<div class="bg-white p-4 rounded shadow text-gray-700 italic">“La calidad es excelente. No se dañan ni se oxidan. ¡Me encantaron!” - <strong>Mariana G.</strong></div>
+<div class="bg-white p-4 rounded shadow text-gray-700 italic">“Muy buen precio y super rápido el envío. ¡Gracias!” - <strong>Laura P.</strong></div>
+<div class="bg-white p-4 rounded shadow text-gray-700 italic">“La atención fue espectacular. Me ayudaron a elegir justo lo que buscaba.” - <strong>Andrea M.</strong></div>
+</div>
+</section>
+<footer class="bg-pink-100 text-center p-6">
+<div class="mb-4">
+<h4 class="font-semibold mb-2">Contáctanos</h4>
+<div class="flex justify-center gap-4">
+<a href="https://www.instagram.com/accesorios_trendyfemme?igsh=bW9jcTN6eTV0Ymdw" target="_blank"><img alt="Instagram" class="social-icon" src="iconos/instagram.png"/><div style="font-size: 0.75rem; color: #333; margin-top: 4px;">Instagram</div></a>
+<a href="https://www.facebook.com/share/16bcXm9fdd/" target="_blank"><img alt="Facebook" class="social-icon" src="iconos/facebook.png"/><div style="font-size: 0.75rem; color: #333; margin-top: 4px;">Facebook</div></a>
+<a href="https://www.tiktok.com/@trendy.femme0?_t=ZS-8wlS3NyjfXx&amp;_r=1" target="_blank"><img alt="TikTok" class="social-icon" src="iconos/tiktok.png"/><div style="font-size: 0.75rem; color: #333; margin-top: 4px;">TikTok</div></a>
+<a href="mailto:trendyfemmeaccesorios@gmail.com"><img alt="Gmail" class="social-icon" src="iconos/gmail.png"/><div style="font-size: 0.75rem; color: #333; margin-top: 4px;">Gmail</div></a>
+<a href="https://wa.me/573005548453" target="_blank"><img alt="WhatsApp" class="social-icon" src="iconos/whatsapp.png"/></a>
+</div>
+</div>
+<p class="text-sm text-gray-600 mt-4">Trendy Femme © 2025</p>
+</footer>
+<!-- WhatsApp flotante -->
+<a class="whatsapp-float" href="https://wa.me/573005548453" target="_blank">
+<img alt="WhatsApp" class="w-12 h-12" src="iconos/whatsapp.png"/>
+</a>
+<script>
+    function filtrarProductos() {
+      const input = document.getElementById('busqueda').value.toLowerCase();
+      const items = document.querySelectorAll('.catalogo-item');
+      items.forEach(item => {
+        const texto = item.innerText.toLowerCase();
+        item.style.display = texto.includes(input) ? 'block' : 'none';
+      });
+    }
+    function toggleFavorito(el) {
+      el.classList.toggle('activo');
+      el.innerText = el.classList.contains('activo') ? '❤️' : '♡';
+    }
+  </script>
+<script>
+  let contador = 0;
+  const productos = [];
+
+  function agregarAlCarrito(nombre = "Producto genérico") {
+    contador++;
+    productos.push(nombre);
+
+    const contadorElemento = document.getElementById('contador-carrito') || crearContador();
+    const listaProductos = document.getElementById('lista-productos') || crearResumen();
+
+    contadorElemento.textContent = contador;
+
+    listaProductos.innerHTML = "";
+    productos.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      listaProductos.appendChild(li);
+    });
+
+    contadorElemento.style.transform = 'scale(1.4)';
+    setTimeout(() => {
+      contadorElemento.style.transform = 'scale(1)';
+    }, 200);
+  }
+
+  function toggleResumenCarrito() {
+    document.getElementById('resumen-carrito').classList.toggle("mostrar");
+  }
+
+  function crearContador() {
+    const div = document.createElement("div");
+    div.className = "carrito-icono";
+    div.onclick = toggleResumenCarrito;
+    div.innerHTML = '🛍️ <span id="contador-carrito">0</span>';
+    document.body.appendChild(div);
+    return div.querySelector("span");
+  }
+
+  function crearResumen() {
+    const div = document.createElement("div");
+    div.id = "resumen-carrito";
+    div.className = "resumen-carrito mostrar";
+    div.innerHTML = "<h3>Tu Carrito</h3><ul id='lista-productos'></ul>";
+    document.body.appendChild(div);
+    return div.querySelector("ul");
+  }
+</script>
+</body>
+</html>
